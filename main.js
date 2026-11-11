@@ -67,11 +67,11 @@ if (contactForm) {
   });
 }
 
-// Portfolio : inspirations d'architecture africaine contemporaine.
+// Portfolio : inspirations d’architecture africaine contemporaine.
 const africanArchitectureImages = [
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/9/94/Lideta_Mercato_-_Vilalta_Arquitectura-2205_%2835414099244%29.jpg",
-    alt: "Marché Lideta à Addis-Abeba, architecture contemporaine inspirée des motifs éthiopiens"
+    src: "https://www.designboom.com/wp-content/dbsub/463737/2026-04-21/david-adjaye-designs-his-new-studio-in-accra-11-69e77fb875435.jpg",
+    alt: "Studio de David Adjaye à Accra, architecture africaine contemporaine"
   },
   {
     src: "https://upload.wikimedia.org/wikipedia/commons/7/74/Bosjes_Chapel_Interior_2.jpg",
