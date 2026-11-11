@@ -70,7 +70,7 @@ if (contactForm) {
 // Portfolio : inspirations d’architecture africaine contemporaine.
 const africanArchitectureImages = [
   {
-    src: "https://www.designboom.com/wp-content/dbsub/463737/2026-04-21/david-adjaye-designs-his-new-studio-in-accra-11-69e77fb875435.jpg",
+    src: "https://www.designboom.com/wp-content/dbsub/463737/2026-04-21/david-adjaye-designs-his-new-studio-in-accra-3-69e77fb87524c.jpg",
     alt: "Studio de David Adjaye à Accra, architecture africaine contemporaine"
   },
   {
