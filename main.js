@@ -66,3 +66,27 @@ if (contactForm) {
     window.location.href = mailto;
   });
 }
+
+// Portfolio : inspirations d'architecture africaine contemporaine.
+const africanArchitectureImages = [
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/94/Lideta_Mercato_-_Vilalta_Arquitectura-2205_%2835414099244%29.jpg",
+    alt: "Marché Lideta à Addis-Abeba, architecture contemporaine inspirée des motifs éthiopiens"
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/7/74/Bosjes_Chapel_Interior_2.jpg",
+    alt: "Intérieur de la chapelle Bosjes en Afrique du Sud, architecture sculpturale contemporaine"
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/f/f8/One_Airport_Square_Accra_2019.jpg",
+    alt: "One Airport Square à Accra, architecture contemporaine au Ghana"
+  }
+];
+
+document.querySelectorAll(".project-card img").forEach((image, index) => {
+  const replacement = africanArchitectureImages[index];
+  if (replacement) {
+    image.src = replacement.src;
+    image.alt = replacement.alt;
+  }
+});
