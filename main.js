@@ -67,8 +67,8 @@ if (contactForm) {
   });
 }
 
-// Portfolio : inspirations d’architecture africaine contemporaine.
-const africanArchitectureImages = [
+// Portfolio : photos d'architecture africaine et images du site de référence ITA Studio.
+const portfolioImages = [
   {
     src: "https://www.designboom.com/wp-content/dbsub/463737/2026-04-21/david-adjaye-designs-his-new-studio-in-accra-3-69e77fb87524c.jpg",
     alt: "Studio de David Adjaye à Accra, architecture africaine contemporaine",
@@ -82,32 +82,39 @@ const africanArchitectureImages = [
     title: "Une autre perspective"
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/7/74/Bosjes_Chapel_Interior_2.jpg",
-    alt: "Intérieur de la chapelle Bosjes en Afrique du Sud, architecture sculpturale contemporaine",
-    category: "Architecture · Afrique du Sud",
-    title: "Chapelle Bosjes"
+    src: "https://drjnz.github.io/ita-studio/plan5.jpg",
+    alt: "Villa contemporaine, image issue du portfolio ITA Studio",
+    category: "Résidentiel · ITA Studio",
+    title: "Villa contemporaine"
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/f8/One_Airport_Square_Accra_2019.jpg",
-    alt: "One Airport Square à Accra, architecture contemporaine au Ghana",
-    category: "Architecture · Accra",
-    title: "One Airport Square"
+    src: "https://drjnz.github.io/ita-studio/plan6.jpg",
+    alt: "Résidence moderne, image issue du portfolio ITA Studio",
+    category: "Urbain · ITA Studio",
+    title: "Résidence moderne"
+  },
+  {
+    src: "https://drjnz.github.io/ita-studio/plan7.jpg",
+    alt: "Espace intérieur contemporain, image issue du portfolio ITA Studio",
+    category: "Intérieur · ITA Studio",
+    title: "Espace contemporain"
   }
 ];
 
 const projectGrid = document.querySelector("#projets .row.g-4");
 if (projectGrid) {
-  const firstProjectColumn = projectGrid.querySelector(":scope > [class*='col-']");
-  if (firstProjectColumn && !projectGrid.querySelector(".project-card--adjaye-second-view")) {
-    const additionalProjectColumn = firstProjectColumn.cloneNode(true);
-    additionalProjectColumn.querySelector(".project-card").classList.add("project-card--adjaye-second-view");
-    projectGrid.insertBefore(additionalProjectColumn, firstProjectColumn.nextSibling);
+  const initialCardColumn = projectGrid.querySelector(":scope > [class*='col-']");
+  const initialCard = initialCardColumn?.querySelector(".project-card");
+
+  // Duplique la carte modèle pour afficher toutes les images du portfolio.
+  while (initialCardColumn && projectGrid.querySelectorAll(".project-card").length < portfolioImages.length) {
+    projectGrid.appendChild(initialCardColumn.cloneNode(true));
   }
 
   projectGrid.querySelectorAll(".project-card").forEach((card, index) => {
+    const project = portfolioImages[index];
     const image = card.querySelector("img");
-    const project = africanArchitectureImages[index];
-    if (!image || !project) return;
+    if (!project || !image) return;
 
     image.src = project.src;
     image.alt = project.alt;
